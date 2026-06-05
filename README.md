@@ -18,7 +18,7 @@
 
 | Field | Details |
 | :--- | :--- |
-| **Project Title** | There is an Imposter in the RAM Among Us: Ejecting the Voyager 1 Glitch |
+| **Project Title** | Memory Block Blast: Reallocating Voyager 1’s Fragmented Memory Map |
 | **Chosen Topic** | The 2024 Voyager 1 Flight Data Subsystem (FDS) Memory Rescue |
 | **Category** | Problem-solving stories |
 
@@ -33,17 +33,25 @@ Launched on September 5, Voyager 1 is one of the two space probes launched by NA
 In November 2023, the Telemetry Modulation Unit (TMU) of Voyager 1 suddenly stopped sending readable data, instead transmitting a gibberish pattern of binary 1s and 0s. After months of remote debugging, NASA pinpointed the root cause: a corrupted 256-word memory chip inside the Flight Data Subsystem (FDS). Since physical repair is impossible to do, the spacecraft's operating code on that faulty chip had to be relocated to a different memory.
 
 ### 3. Why This is a Computer Architecture Topic (Problem & Solution)
-This situation is a perfect real-world example of extreme hardware constraints and memory mapping. It highlights exactly how software instructions are permanently tied to physical memory addresses. Working with highly restricted 1970s memory banks, NASA engineers had to calculate the exact byte sizes of the stranded instructions and chop the code into smaller fragments. From there, they meticulously rewrote the internal memory pointers so the CPU could pull and execute these scattered pieces of code seamlessly across different, non-contiguous hardware blocks.
+This situation is a real-world example of hardware constraints and memory mapping. It highlights how software instructions are permanently tied to physical memory addresses. Working with highly restricted 1970s memory banks, NASA engineers had to calculate the exact byte sizes of the stranded instructions and chop the code into smaller fragments. From there, they meticulously rewrote the internal memory pointers so the CPU could pull and execute these scattered pieces of code across different, non-contiguous hardware blocks.
+
+### 4. Timeline of the mission
+
+1. September 5, 1977 - Launch of Voyager 1
+2. November 14, 2023 - Voyager 1 stopped sending readable science and engineering data back to Earth
+3. March 3, 2024 - NASA team noticed that activity from one part of the flight data system stood out from the rest of the garbled data.
+4. April 20, 2024 - Mission flight team heard back from the spacecraft after five months.
 
 ---
 
 ## III. Interactive Element: "Fix Voyager's RAM"
 
-> **The Concept:** An *Among Us* style 2D interactive game focused on memory defragmentation, replacing standard mini-games like "Fix Wiring" or "Download Data."
+> **The Concept:** 2D Interactive Puzzle Game
+> To make the architecture problem interactive, the exhibit will feature an interactive mini-game. Voyager 1’s minigame will be focused on memory defragmentation.
 
-*   **User Flow:** The visitor encounters a retro control panel flashing a red "COMMS FAILURE" warning, outputting gibberish binary text. They must open the "FDS Diagnostics" tab, revealing a grid of memory blocks where one corrupted block is glowing red. The visitor must manually drag and drop smaller "code fragments" from the bad block into scattered, non-contiguous "healthy" RAM slots without exceeding their byte capacity.
-*   **Relation to the Problem and Solution:** This gamified task shows the real-world engineering challenge NASA faced. At first, the task shows gibberish memory data, which represents the actual garbled telemetry caused by the hardware fault. By forcing the user to manually slice code and fit it into constrained, non-contiguous spaces, they practically experience the difficulty of memory allocation and fragmentation. Once they solve the puzzle, a "Task Complete" animation plays just like in the real Among Us game, and the telemetry dashboard restores to clean data, perfectly mirroring NASA's successful software patch solution.
-
+*   **User Flow:** The user will encounter a console with a terminal that is supposed to send updates from Voyager 1 back to Earth. Due to a memory chip failure, memory in the FDS that is responsible for packaging and sending engineering and science data became corrupted. They must transfer packages of code from the old memory chip to the new working memory chip by selecting memory chunks from the old memory chip and selecting a sector in the new memory chip for the memory chunk to transfer to. The user must successfully transfer all necessary code to the new memory chip and initiate CPU Jump Remapping to fix Voyager 1’s output stream.
+  
+* This gamified task shows the real-world engineering challenge NASA faced. This interactive element relates to CSARCH2 through Binary Data Organization and Memory Addressing. When NASA Engineers first discovered the problem with Voyager 1, they narrowed the failure down to a 256-word block of code responsible for packaging the spacecraft’s engineering data. Voyager 1’s code was sliced into smaller fragments and was reallocated in the memory chip by controlling the processor’s Instruction Pointer, and since the code was spread across the new memory chip, they had to end each fragment with an Assembly JMP instruction to leap across physical memory addresses to the next snippet of code without crashing.
 ---
 
 ## IV. Technical Stack
@@ -62,17 +70,17 @@ To build this highly interactive exhibit, our group will utilize a modern web st
 ## V. Tentative Style Guide Snapshot & Motif
 
 **Theme:** Retro Space Website  
-The visual motif will be a blend of two worlds: the monochromatic aesthetic of 1970s NASA Mission Control terminals for the narrative sections and the vibrant, flat-design UI of an *Among Us* task screen for the interactive mini-game.
+The visual motif will be a blend of the monochromatic aesthetic of 1970s NASA Mission Control terminals for the narrative sections and the vibrant, flat-design UI of an Among Us task screen for the interactive mini-game.
 
 ### Color Palette & Typography
 
 | Element | Specification |
 | :--- | :--- |
-| **Background** | Deep Space Black (`#050505`) and Dark Slate (`#1E1E1E`) to create an immersive, void-like backdrop. |
-| **Primary Text (Narrative)** | CRT Green (`#00FF41`) or Terminal Amber (`#FFB000`) for paragraphs and headings, mimicking vintage phosphor displays. |
-| **Accent / Interactive UI** | "Sus" Red (`#FF0000`) for corrupted memory blocks and errors. Cyan (`#38b6ff`), Yellow (`#ffde59`), and Magenta (`#ff007f`) for draggable "code fragments". |
-| **Heading / Terminal Font** | *VT323* or *Share Tech Mono* to simulate early digital computer screen readouts. |
-| **Body / Instruction Font** | *Inter* or *Roboto* (sans-serif) for the main narrative and task instructions to ensure maximum readability for the grading panel. |
+| **Background** | Deep Space Black (#050505) and Dark Slate (#1E1E1E) to create an immersive, void-like backdrop. |
+| **Primary Text (Narrative)** |  Ghost White (#F8F8FF) and Light Ash (#D3D3D3) for maximum readability against the dark backgrounds. |
+| **Accent / Interactive UI** | Alert Red (#E63946) for the corrupted memory block and flashing error messages. |
+| **Heading / Terminal Font** | *Century Gothic Bold* or *Space Grotesk* for wide, commanding section titles. |
+| **Body / Instruction Font** | *Roboto Mono* for memory addresses and raw data streams, paired with Inter for standard paragraph readability. |
 
 ### Layout & Interface
 
