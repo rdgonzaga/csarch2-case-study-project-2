@@ -47,36 +47,36 @@ This situation is a real-world example of hardware constraints and memory mappin
 
 ## III. Exhibit Flow
 
-### Narrative Structure
+<mark>### Narrative Structure<mark/>
 
-The exhibit follows a **ScrollyTelling** format. As the user scrolls downward, the chronological timeline of Voyager 1 unfolds through scroll-driven animations and visual storytelling elements, simulating a sense of space travel that mirrors the spacecraft’s journey through space.
+<mark>The exhibit follows a **ScrollyTelling** format. As the user scrolls downward, the chronological timeline of Voyager 1 unfolds through scroll-driven animations and visual storytelling elements, simulating a sense of space travel that mirrors the spacecraft’s journey through space.<mark/>
 
-### Definition of Memory
+<mark>### Definition of Memory<mark/>
 
-To give the users a quick foundation before diving into the problem of Voyager 1, this section defines computer memory in accessible terms. It will explain memory as the electronic workspace where a computer stores the active data and operating instructions it needs to function. 
+<mark>To give the users a quick foundation before diving into the problem of Voyager 1, this section defines computer memory in accessible terms. It will explain memory as the electronic workspace where a computer stores the active data and operating instructions it needs to function.<mark/> 
 
-### Memory Addressing and Memory Mapping
+<mark>### Memory Addressing and Memory Mapping<mark/>
 
-Building on the definition of memory, this section introduces how the computer navigates its storage.
+<mark>Building on the definition of memory, this section introduces how the computer navigates its storage.<mark/>
 
-* **Memory Addressing:** We will explain how every piece of data is assigned a unique numerical identifier (an address) so the central processing unit (CPU) can locate it instantly.
-* **Memory Mapping:** The exhibit will visually break down how a computer organizes these addresses into distinct regions for system code, temporary data, and hardware communications.
+<mark>* **Memory Addressing:** We will explain how every piece of data is assigned a unique numerical identifier (an address) so the central processing unit (CPU) can locate it instantly.
+* **Memory Mapping:** The exhibit will visually break down how a computer organizes these addresses into distinct regions for system code, temporary data, and hardware communications.<mark/>
 
-Before reaching the interactive segment, users will encounter a brief concept discussion introducing the computer architecture principles behind the Voyager 1 recovery effort. Through descriptions and visual illustrations, the exhibit will explain how software instructions are stored in specific memory locations and how processors use memory addresses to fetch and execute instructions. The discussion will also highlight the challenges posed by hardware limitations and memory corruption, demonstrating how NASA engineers were forced to relocate critical code to alternative memory regions.
+<mark>Before reaching the interactive segment, users will encounter a brief concept discussion introducing the computer architecture principles behind the Voyager 1 recovery effort. Through descriptions and visual illustrations, the exhibit will explain how software instructions are stored in specific memory locations and how processors use memory addresses to fetch and execute instructions. The discussion will also highlight the challenges posed by hardware limitations and memory corruption, demonstrating how NASA engineers were forced to relocate critical code to alternative memory regions.<mark/>
 
-### Instruction Pointer Control
+<mark>### Instruction Pointer Control<mark/>
 
-The exhibit will also introduce the concept of Instruction Pointer control and program flow. Users will learn how a processor normally executes instructions sequentially and how jump instructions can redirect execution to different memory addresses. This concept is central to understanding how Voyager 1 continued operating even after portions of its software were relocated across non-contiguous memory regions.
+<mark>The exhibit will also introduce the concept of Instruction Pointer control and program flow. Users will learn how a processor normally executes instructions sequentially and how jump instructions can redirect execution to different memory addresses. This concept is central to understanding how Voyager 1 continued operating even after portions of its software were relocated across non-contiguous memory regions.<mark/>
 
 ### Interactive Element
 
-The interactive mini-game will serve as a visual demonstration of these concepts by allowing users to perform memory reallocation and instruction remapping. Through this activity, users will gain an understanding of how memory organization, address mapping, and control flow were used by NASA engineers to restore communication with Voyager 1 after the Flight Data Subsystem failure.
+<mark>The interactive mini-game will serve as a visual demonstration of these concepts by allowing users to perform memory reallocation and instruction remapping. Through this activity, users will gain an understanding of how memory organization, address mapping, and control flow were used by NASA engineers to restore communication with Voyager 1 after the Flight Data Subsystem failure.<mark>
 
 Upon reaching the 2024 problem-solving segment, the exhibit will feature an interactive mini-game. Voyager 1’s minigame will be focused on memory reallocation and instruction mapping.
 
 * **User Flow:** The user will encounter a mission-control terminal responsible for receiving engineering updates from Voyager 1. Due to a memory chip failure, memory in the FDS that is responsible for packaging and sending engineering and science data became corrupted. They must transfer packages of code from the old memory chip to the new working memory chip by selecting memory chunks from the old memory chip and selecting a sector in the new memory chip for the memory chunk to transfer to. The user must successfully transfer all necessary code to the new memory chip and initiate CPU Jump Remapping to fix Voyager 1’s output stream.
 
-This gamified task serves as an application of the previously discussed Computer Architecture concepts. By relocating code fragments and performing CPU jump remapping, users will gain an intuitive understanding of how software can continue functioning even when code must be relocated across different memory regions. The activity reinforces concepts such as memory addressing, memory organization, and control flow in an engaging medium.
+<mark>This gamified task serves as an application of the previously discussed Computer Architecture concepts. By relocating code fragments and performing CPU jump remapping, users will gain an intuitive understanding of how software can continue functioning even when code must be relocated across different memory regions. The activity reinforces concepts such as memory addressing, memory organization, and control flow in an engaging medium.<mark/>
 
 ---
 
